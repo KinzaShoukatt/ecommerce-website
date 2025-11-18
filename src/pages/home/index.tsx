@@ -13,7 +13,9 @@ import FifthSecThirdImage from "../../assets/images/Rectangle15.png";
 import ClockIcon from "../../assets/images/Group.svg";
 import CalenderIcon from "../../assets/images/uil_calender.svg";
 import SixthSecImage from "../../assets/images/Rectangle17.png";
+import { useNavigate } from "react-router-dom";
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="bg-[#FBEBB5] flex justify-center items-center p-0 gap-20 h-screen font-popp">
@@ -202,7 +204,12 @@ const Home = () => {
           </div>
         </div>
         <p className="popp font-medium text-[20px] text-center pt-7 ">
-          <span className="border-b-2">View More</span>
+          <span
+            className="border-b-2 cursor-pointer"
+            onClick={() => navigate("/blog")}
+          >
+            View More
+          </span>
         </p>
       </div>
       {/* sixth section */}
