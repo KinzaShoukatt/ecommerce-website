@@ -24,7 +24,9 @@ const Header = () => {
             <li onClick={() => navigate("/shop")} className="cursor-pointer">
               Shop
             </li>
-            <li>About</li>
+            <li onClick={() => navigate("/blog")} className="cursor-pointer">
+              About
+            </li>
             <li onClick={() => navigate("/contact")} className="cursor-pointer">
               Contact
             </li>
@@ -37,7 +39,7 @@ const Header = () => {
             src={AccountAlert}
             alt=""
           />
-          <img className="h-6" src={SearchIcon} alt="" />
+          <img className="h-6 cursor-pointer" src={SearchIcon} alt="" />
           <img
             onClick={() => navigate("/cart")}
             className="h-6 cursor-pointer"

@@ -23,7 +23,10 @@ const Home = () => {
           <p className="popp font-medium text-[64px]">
             Rocket single <br /> seater
           </p>
-          <span className="popp font-medium box-border border-b-2 pb-2 text-[24px] leading-15">
+          <span
+            className="popp font-medium box-border border-b-2 pb-2 text-[24px] leading-15 cursor-pointer"
+            onClick={() => navigate("/shop")}
+          >
             Shop Now
           </span>
         </div>
@@ -39,7 +42,10 @@ const Home = () => {
           </div>
           <div className="pl-25">
             <p className="font-medium text-4xl">Side table</p>
-            <span className="font-medium text-[18px] border-b-2 pb-2">
+            <span
+              className="font-medium text-[18px] border-b-2 pb-2 cursor-pointer"
+              onClick={() => navigate("/shop")}
+            >
               View More
             </span>
           </div>
@@ -50,7 +56,10 @@ const Home = () => {
           </div>
           <div className="pl-25">
             <p className="font-medium text-4xl">Side table</p>
-            <span className="font-medium text-[18px] border-b-2 pb-2">
+            <span
+              className="font-medium text-[18px] border-b-2 pb-2 cursor-pointer"
+              onClick={() => navigate("/shop")}
+            >
               View More
             </span>
           </div>
@@ -104,7 +113,12 @@ const Home = () => {
           </div>
         </div>
         <p className="popp font-medium text-[20px] text-center pt-7 ">
-          <span className="border-b-2">View More</span>
+          <span
+            className="border-b-2 cursor-pointer"
+            onClick={() => navigate("/shop")}
+          >
+            View More
+          </span>
         </p>
       </div>
       {/* Fourth Section */}
@@ -119,7 +133,10 @@ const Home = () => {
         <div className="popp text-center">
           <p className="font-medium text-2xl">New Arrivals</p>
           <p className="font-bold text-5xl pt-2.5">Asgaard sofa</p>
-          <button className=" border font-normal text-[20px] py-2.5 px-10 mt-7">
+          <button
+            className=" border font-normal text-[20px] py-2.5 px-10 mt-7 cursor-pointer"
+            onClick={() => navigate("/shop")}
+          >
             Order Now
           </button>
         </div>

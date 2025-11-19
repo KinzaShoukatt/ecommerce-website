@@ -7,6 +7,7 @@ import Cart from "./pages/cart";
 import Contact from "./pages/contact";
 import Home from "./pages/home";
 import Blog from "./pages/blog";
+import Review from "./pages/review";
 
 const AppRoutes: React.FC = () => {
   const pathName = useLocation();
@@ -22,6 +23,7 @@ const AppRoutes: React.FC = () => {
       <Route path="/cart" element={<Cart />}></Route>
       <Route path="/contact" element={<Contact />}></Route>
       <Route path="/blog" element={<Blog />}></Route>
+      <Route path="/review" element={<Review />}></Route>
     </Routes>
   );
 };

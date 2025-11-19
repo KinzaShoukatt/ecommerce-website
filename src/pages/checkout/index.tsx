@@ -1,7 +1,12 @@
 // import React from "react";
 import BgImage from "../../assets/images/Rectangle1.png";
 import BgImageLogo from "../../assets/images/Meubel House_Logos-05.svg";
+import { useLocation } from "react-router-dom";
 const CheckOut = () => {
+  const location = useLocation();
+  const product = location?.state?.product || [];
+  const productName = product?.name || "";
+  const productPrice = product?.price || 0;
   return (
     <div className="popp box-border">
       {/* first */}
@@ -137,27 +142,34 @@ const CheckOut = () => {
               <p>Product</p>
               <p>Subtotal</p>
             </div>
-            <div className="flex justify-between py-2.5">
+            <div className="flex justify-between py-2.5 gap-6">
               <p className="font-normal text-[16px] text-[#9F9F9F]">
-                Asgaard sofa
+                {productName}
               </p>
-              <p className="font-light text-[16px]">Rs. 250,000.00</p>
+              <p className="font-light text-[16px] whitespace-nowrap pr-1">
+                {productPrice}
+              </p>
             </div>
-            <div className="flex justify-between py-2.5">
+            <div className="flex justify-between py-2.5 gap-6">
               <p className="font-normal text-[16px]">Subtotal</p>
-              <p className="font-light text-[16px]">Rs. 250,000.00</p>
+              <p className="font-light text-[16px] pr-1">{productPrice}</p>
             </div>
-            <div className="flex justify-between py-2.5">
+            <div className="flex justify-between py-2.5 gap-6">
               <p className="font-normal text-[16px]">Total</p>
-              <p className="font-bold text-2xl text-[#B88E2F]">
-                Rs. 250,000.00
+              <p className="font-bold text-2xl text-[#B88E2F] ">
+                {productPrice}
               </p>
             </div>
           </div>
           <div className="py-4">
             <div>
-              <input type="radio" />
-              <label className="font-normal pl-2.5">Direct Bank Transfer</label>
+              <input id="directBank" type="radio" className="cursor-pointer" />
+              <label
+                htmlFor="directBank"
+                className="font-normal pl-2.5 cursor-pointer"
+              >
+                Direct Bank Transfer
+              </label>
             </div>
 
             <p className="font-light text-[#9F9F9F]">
@@ -165,15 +177,31 @@ const CheckOut = () => {
               Order ID as the payment reference. Your order will not be shipped
               until the funds have cleared in our account.
             </p>
-            <div className="pt-2.5 pb-1.5">
-              <input type="radio" />
-              <label className="font-medium pl-2.5 text-[#9F9F9F]">
+            <div className="pt-2.5 pb-1.5 ">
+              <input
+                id="bank"
+                name="payment"
+                type="radio"
+                className="cursor-pointer"
+              />
+              <label
+                htmlFor="bank"
+                className="font-medium pl-2.5 text-[#9F9F9F] cursor-pointer"
+              >
                 Direct Bank Transfer
               </label>
             </div>
             <div className="pb-2.5 pt-1.5">
-              <input type="radio" />
-              <label className="font-medium pl-2.5 text-[#9F9F9F]">
+              <input
+                id="cash"
+                name="payment"
+                type="radio"
+                className="cursor-pointer"
+              />
+              <label
+                htmlFor="cash"
+                className="font-medium pl-2.5 text-[#9F9F9F] cursor-pointer"
+              >
                 Cash On Delivery
               </label>
             </div>
@@ -185,7 +213,7 @@ const CheckOut = () => {
             </p>
           </div>
           <div className="py-2.5 flex">
-            <button className="border font-normal text-[20px] rounded-[10px] py-1.5 px-7 mx-auto">
+            <button className="border font-normal text-[20px] rounded-[10px] py-1.5 px-7 mx-auto cursor-pointer">
               Place Order
             </button>
           </div>

@@ -45,7 +45,7 @@ const MyAccount = () => {
               <label className="font-normal text-[16px]">Remember me</label>
             </div>
             <div className="flex items-center gap-2.5">
-              <button className="border font-normal text-[20px] rounded-[10px] py-1.5 px-6">
+              <button className="border font-normal text-[20px] rounded-[10px] py-1.5 px-6 cursor-pointer">
                 Log In
               </button>
               <p className="font-light">Lost Your Password?</p>
@@ -73,7 +73,7 @@ const MyAccount = () => {
               </p>
             </div>
             <div className="py-2.5">
-              <button className="border font-normal text-[20px] rounded-[10px] py-1.5 px-6">
+              <button className="border font-normal text-[20px] rounded-[10px] py-1.5 px-6 cursor-pointer">
                 Register
               </button>
             </div>

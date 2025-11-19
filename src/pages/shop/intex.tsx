@@ -20,7 +20,108 @@ import ThirdSecThirteenImage from "../../assets/images/Granite-square-side-table
 import ThirdSecFourteenImage from "../../assets/images/Asgaard-sofa.png";
 import ThirdSecFifteenImage from "../../assets/images/Maya-sofa-three-seater.png";
 import ThirdSecSixteenImage from "../../assets/images/Outdoor-sofa-set.png";
+import { useNavigate } from "react-router-dom";
 const Shop = () => {
+  const navigate = useNavigate();
+  const products = [
+    {
+      id: 1,
+      name: "Trenton modular sofa_3",
+      price: "Rs. 25,000.00",
+      image: ThirdSecFirstImage,
+    },
+    {
+      id: 2,
+      name: "Granite dining table with dining chair 1",
+      price: "Rs. 25,000.00",
+      image: ThirdSecSecImage,
+    },
+    {
+      id: 3,
+      name: "Outdoor bar table and stool",
+      price: "Rs. 25,000.00",
+      image: ThirdSecThirdImage,
+    },
+    {
+      id: 4,
+      name: "Plain console with teak mirror",
+      price: "Rs. 25,000.00",
+      image: ThirdSecFourthImage,
+    },
+    {
+      id: 5,
+      name: "Grain coffee table",
+      price: "Rs. 15,000.00",
+      image: ThirdSecFiftImage,
+    },
+    {
+      id: 6,
+      name: "Kent coffee table",
+      price: "Rs. 225,000.00",
+      image: ThirdSecSixthImage,
+    },
+    {
+      id: 7,
+      name: "Round coffee table_color 2",
+      price: "Rs. 251,000.00",
+      image: ThirdSecSeventhImage,
+    },
+    {
+      id: 8,
+      name: "Reclaimed teak coffee table",
+      price: "Rs. 25,200.00",
+      image: ThirdSecEightImage,
+    },
+    {
+      id: 9,
+      name: "Plain console_",
+      price: "Rs. 258,200.00",
+      image: ThirdSecNinthImage,
+    },
+    {
+      id: 10,
+      name: "Reclaimed teak Sideboard",
+      price: "Rs. 200,000.00",
+      image: ThirdSecTenthImage,
+    },
+    {
+      id: 11,
+      name: "SJP_0825",
+      price: "Rs. 200,000.00",
+      image: ThirdSecEleventhImage,
+    },
+    {
+      id: 12,
+      name: "Bella chair and table",
+      price: "Rs. 100,000.00",
+      image: ThirdSecTwelevthImage,
+    },
+    {
+      id: 13,
+      name: "Granite square side table",
+      price: "Rs. 258,800.00",
+      image: ThirdSecThirteenImage,
+    },
+    {
+      id: 14,
+      name: "Asgaard sofa",
+      price: "Rs. 250,000.00",
+      image: ThirdSecFourteenImage,
+    },
+    {
+      id: 15,
+      name: "Maya sofa three seater",
+      price: "Rs. 115,000.00",
+      image: ThirdSecFifteenImage,
+    },
+    {
+      id: 16,
+      name: "Outdoor sofa set",
+      price: "Rs. 244,000.00",
+      image: ThirdSecSixteenImage,
+    },
+  ];
+
   return (
     <>
       <div className="popp box-border">
@@ -70,227 +171,28 @@ const Shop = () => {
         </div>
         {/* third */}
         <div className="popp px-20 pb-15">
-          <div className="flex justify-evenly py-5">
-            <div>
-              <div>
-                <img src={ThirdSecFirstImage} alt="" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 py-5">
+            {products.map((item) => (
+              <div key={item.id} className="cursor-pointer">
+                <div className="size-60">
+                  <img
+                    onClick={() =>
+                      navigate("/review", { state: { products: item } })
+                    }
+                    className="h-full w-full cover"
+                    src={item.image}
+                    alt=""
+                  />
+                </div>
+
+                <div>
+                  <p className="font-normal text-[16px]">{item.name}</p>
+                  <p className="font-medium text-2xl">{item.price}</p>
+                </div>
               </div>
-              <div>
-                <p className="font-normal text-[16px]">
-                  Trenton modular sofa_3
-                </p>
-                <p className="font-medium text-2xl">Rs. 25,000.00</p>
-              </div>
-            </div>
-            <div>
-              <div>
-                <img src={ThirdSecSecImage} alt="" />
-              </div>
-              <div>
-                <p className="font-normal text-[16px]">
-                  Granite dining table with <br /> dining chair 1
-                </p>
-                <p className="font-medium text-2xl">Rs. 25,000.00</p>
-              </div>
-            </div>
-            <div>
-              <div>
-                <img src={ThirdSecThirdImage} alt="" />
-              </div>
-              <div>
-                <p className="font-normal text-[16px]">
-                  Outdoor bar table and <br /> stool
-                </p>
-                <p className="font-medium text-2xl">Rs. 25,000.00</p>
-              </div>
-            </div>
-            <div>
-              <div>
-                <img src={ThirdSecFourthImage} alt="" />
-              </div>
-              <div>
-                <p className="font-normal text-[16px]">
-                  Plain console with teak <br /> mirror
-                </p>
-                <p className="font-medium text-2xl">Rs. 25,000.00</p>
-              </div>
-            </div>
+            ))}
           </div>
 
-          <div className="flex flex-wrap justify-evenly py-5">
-            <div className="w-full sm:w-1/2 md:w-1/4">
-              <div className="size-60">
-                <img
-                  className="max-h-full w-full  cover"
-                  src={ThirdSecFiftImage}
-                  alt=""
-                />
-              </div>
-              <div>
-                <p className="font-normal text-[16px]">Grain coffee table</p>
-                <p className="font-medium text-2xl">Rs. 15,000.00</p>
-              </div>
-            </div>
-            <div className="w-full sm:w-1/2 md:w-1/4">
-              <div className="size-60">
-                <img
-                  className="h-full w-full  cover"
-                  src={ThirdSecSixthImage}
-                  alt=""
-                />
-              </div>
-              <div>
-                <p className="font-normal text-[16px]">Kent coffee table</p>
-                <p className="font-medium text-2xl">Rs. 225,000.00</p>
-              </div>
-            </div>
-            <div className="w-full sm:w-1/2 md:w-1/4">
-              <div className="size-60">
-                <img
-                  className="h-full w-full cover"
-                  src={ThirdSecSeventhImage}
-                  alt=""
-                />
-              </div>
-              <div>
-                <p className="font-normal text-[16px]">
-                  Round coffee table_color 2
-                </p>
-                <p className="font-medium text-2xl">Rs. 251,000.00</p>
-              </div>
-            </div>
-            <div className="w-full sm:w-1/2 md:w-1/4">
-              <div className="size-60">
-                <img
-                  className="h-full w-full cover"
-                  src={ThirdSecEightImage}
-                  alt=""
-                />
-              </div>
-              <div>
-                <p className="font-normal text-[16px]">
-                  Reclaimed teak coffee table
-                </p>
-                <p className="font-medium text-2xl">Rs. 25,200.00</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex justify-evenly py-5">
-            <div className="w-full sm:w-1/2 md:w-1/4">
-              <div className="size-60">
-                <img
-                  className="h-full w-full cover"
-                  src={ThirdSecNinthImage}
-                  alt=""
-                />
-              </div>
-              <div>
-                <p className="font-normal text-[16px]">Plain console_</p>
-                <p className="font-medium text-2xl">Rs. 258,200.00</p>
-              </div>
-            </div>
-            <div className="w-full sm:w-1/2 md:w-1/4">
-              <div className="size-60">
-                <img
-                  className="h-full w-full cover"
-                  src={ThirdSecTenthImage}
-                  alt=""
-                />
-              </div>
-              <div>
-                <p className="font-normal text-[16px]">
-                  Reclaimed teak Sideboard
-                </p>
-                <p className="font-medium text-2xl">Rs. 200,000.00</p>
-              </div>
-            </div>
-            <div className="w-full sm:w-1/2 md:w-1/4">
-              <div className="size-60">
-                <img
-                  className="h-full w-full  cover"
-                  src={ThirdSecEleventhImage}
-                  alt=""
-                />
-              </div>
-              <div>
-                <p className="font-normal text-[16px]">SJP_0825</p>
-                <p className="font-medium text-2xl">Rs. 200,000.00</p>
-              </div>
-            </div>
-            <div className="w-full sm:w-1/2 md:w-1/4">
-              <div className="size-60">
-                <img
-                  className="h-full w-full  cover"
-                  src={ThirdSecTwelevthImage}
-                  alt=""
-                />
-              </div>
-              <div>
-                <p className="font-normal text-[16px]">Bella chair and table</p>
-                <p className="font-medium text-2xl">Rs. 100,000.00</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex justify-evenly py-5">
-            <div className="w-full sm:w-1/2 md:w-1/4">
-              <div className="size-60">
-                <img
-                  className="h-full w-full cover"
-                  src={ThirdSecThirteenImage}
-                  alt=""
-                />
-              </div>
-              <div>
-                <p className="font-normal text-[16px]">
-                  Granite square side table
-                </p>
-                <p className="font-medium text-2xl">Rs. 258,800.00</p>
-              </div>
-            </div>
-            <div className="w-full sm:w-1/2 md:w-1/4">
-              <div className="size-60">
-                <img
-                  className="h-full w-full cover"
-                  src={ThirdSecFourteenImage}
-                  alt=""
-                />
-              </div>
-              <div>
-                <p className="font-normal text-[16px]">Asgaard sofa</p>
-                <p className="font-medium text-2xl">Rs. 250,000.00</p>
-              </div>
-            </div>
-            <div className="w-full sm:w-1/2 md:w-1/4">
-              <div className="size-60">
-                <img
-                  className="h-full w-full cover"
-                  src={ThirdSecFifteenImage}
-                  alt=""
-                />
-              </div>
-              <div>
-                <p className="font-normal text-[16px]">
-                  Maya sofa three seater
-                </p>
-                <p className="font-medium text-2xl">Rs. 115,000.00</p>
-              </div>
-            </div>
-            <div className="w-full sm:w-1/2 md:w-1/4">
-              <div className="size-60">
-                <img
-                  className="h-full w-full cover"
-                  src={ThirdSecSixteenImage}
-                  alt=""
-                />
-              </div>
-              <div>
-                <p className="font-normal text-[16px]">Outdoor sofa set</p>
-                <p className="font-medium text-2xl">Rs. 244,000.00</p>
-              </div>
-            </div>
-          </div>
           <div className="flex justify-center gap-5 font-normal text[20px] pt-15">
             <p className="py-2 px-4 bg-[#FBEBB5] rounded-lg">1</p>
             <p className="py-2 px-4 bg-[#FFF9E5] rounded-lg">2</p>
