@@ -3,8 +3,8 @@
 const Footer = () => {
   return (
     <>
-      <div className="popp py-5 px-20 box-border">
-        <div className="flex justify-between py-10 pr-5 border-b">
+      <div className="popp py-5 box-border px-2.5 md:px-5 lg:px-20">
+        <div className="flex flex-col justify-between gap-10 py-10 px-2.5 border-b md:flex-row md:px-10">
           <div className="font-normal text-[16px] text-[#9F9F9F] flex items-center">
             400 University Drive Suite 200 Coral <br /> Gables, <br /> FL 33134
             USA
@@ -20,7 +20,7 @@ const Footer = () => {
           </div>
           <div className="font-medium">
             <p className=" text-[#9F9F9F]">Help</p>
-            <ul className="leading-10 pt-2.5">
+            <ul className="leading-10 pt-2.5 whitespace-nowrap">
               <li>Payment Options</li>
               <li>Returns</li>
               <li>Privacy Policies</li>
@@ -39,7 +39,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="popp font-normal text-[16px] pt-5">
+        <div className="popp font-normal text-[14px] pt-5 sm:text-[16px]">
           2022 Meubel House. All rights reverved
         </div>
       </div>

@@ -19,13 +19,13 @@ const Blog = () => {
       <div className="popp box-border">
         {/* first */}
         <div
-          className="h-[50vh] flex flex-col justify-center text-center box-border"
+          className="h-[50vh]  w-full object-cover flex flex-col justify-center text-center box-border"
           style={{ backgroundImage: `url(${BgImage})` }}
         >
           <div className="leading-none p-0 m-0">
             <img className="mx-auto" src={BgImageLogo} alt="" />
           </div>
-          <p className="font-medium text-5xl">Blog</p>
+          <p className="font-medium text-3xl md:text-5xl">Blog</p>
           <div className="flex gap-1 justify-center pt-2.5">
             <p className="font-medium text-[16px]">Home</p>
             <p className="font-medium">&gt;</p>
@@ -33,29 +33,46 @@ const Blog = () => {
           </div>
         </div>
         {/* second */}
-        <div className="flex gap-5 pt-20 pb-10 px-20">
+        <div className="flex flex-col gap-5 pt-10 pb-10 px-5 md:flex-row md:px-20 md:pt-20">
           {/* left */}
-          <div className="w-2/3">
+          <div className="w-full md:w-2/3">
             <div>
-              <img src={FirstBlog} alt="" />
-              <div className="flex gap-5 py-2.5 text-[#9F9F9F]">
-                <div className="flex gap-2.5">
-                  <img src={ProfileBlog} alt="" />
+              <img
+                className="w-full max-w-full object-cover"
+                src={FirstBlog}
+                alt=""
+              />
+
+              <div className="flex gap-2.5 py-2.5 text-[#9F9F9F] text-[14px] md:gap-5">
+                <div className="flex gap-1 md:gap-2.5 ">
+                  <img
+                    className="size-5 md:size-auto"
+                    src={ProfileBlog}
+                    alt=""
+                  />
                   <p>Admin</p>
                 </div>
-                <div className="flex gap-2.5">
-                  <img src={CalenderBlog} alt="" />
+                <div className="flex gap-1 md:gap-2.5">
+                  <img
+                    className="size-5 md:size-auto"
+                    src={CalenderBlog}
+                    alt=""
+                  />
                   <p>14 Oct 2022</p>
                 </div>
-                <div className="flex gap-2.5">
-                  <img src={DescriptionBlog} alt="" />
+                <div className="flex gap-1 md:gap-2.5">
+                  <img
+                    className="size-5 md:size-auto"
+                    src={DescriptionBlog}
+                    alt=""
+                  />
                   <p>Wood</p>
                 </div>
               </div>
-              <p className="font-medium text-3xl">
+              <p className="font-medium text-xl md:text-3xl">
                 Going all-in with millennial design
               </p>
-              <p className="font-normal text-[15px] text-[#9F9F9F] py-2.5">
+              <p className="font-normal text-xs md:text-[15px] text-[#9F9F9F] py-2.5 text-justify">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Mus
                 mauris vitae ultricies leo integer malesuada nunc. In nulla
@@ -67,31 +84,47 @@ const Blog = () => {
                 ornare aenean euismod elementum.
               </p>
               <p className="mb-7">
-                <span className=" font-normal text-[16px] border-b">
+                <span className=" font-normal text-[14px] md:text-[16px] border-b">
                   Read More
                 </span>
               </p>
             </div>
             <div>
-              <img src={SecondBlog} alt="" />
-              <div className="flex gap-5 py-2.5 text-[#9F9F9F]">
-                <div className="flex gap-2.5">
-                  <img src={ProfileBlog} alt="" />
+              <img
+                className="w-full max-w-full object-cover"
+                src={SecondBlog}
+                alt=""
+              />
+              <div className="flex gap-2.5 py-2.5 text-[#9F9F9F] text-[14px] md:gap-5">
+                <div className="flex gap-1 md:gap-2.5">
+                  <img
+                    className="size-5 md:size-auto"
+                    src={ProfileBlog}
+                    alt=""
+                  />
                   <p>Admin</p>
                 </div>
-                <div className="flex gap-2.5">
-                  <img src={CalenderBlog} alt="" />
+                <div className="flex gap-1 md:gap-2.5 ">
+                  <img
+                    className="size-5 md:size-auto"
+                    src={CalenderBlog}
+                    alt=""
+                  />
                   <p>14 Oct 2022</p>
                 </div>
-                <div className="flex gap-2.5">
-                  <img src={DescriptionBlog} alt="" />
+                <div className="flex gap-1 md:gap-2.5 ">
+                  <img
+                    className="size-5 md:size-auto"
+                    src={DescriptionBlog}
+                    alt=""
+                  />
                   <p>Wood</p>
                 </div>
               </div>
-              <p className="font-medium text-3xl">
+              <p className="font-medium text-xl md:text-3xl">
                 Exploring new ways of decorating
               </p>
-              <p className="font-normal text-[15px] text-[#9F9F9F] py-2.5">
+              <p className="font-normal text-xs md:text-[15px] text-[#9F9F9F] py-2.5 text-justify">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Mus
                 mauris vitae ultricies leo integer malesuada nunc. In nulla
@@ -103,31 +136,47 @@ const Blog = () => {
                 ornare aenean euismod elementum.
               </p>
               <p className="mb-7">
-                <span className=" font-normal text-[16px] border-b">
+                <span className="font-normal text-[14px] md:text-[16px] border-b">
                   Read More
                 </span>
               </p>
             </div>
             <div>
-              <img src={ThirdBlog} alt="" />
-              <div className="flex gap-5 py-2.5 text-[#9F9F9F]">
-                <div className="flex gap-2.5">
-                  <img src={ProfileBlog} alt="" />
+              <img
+                className="w-full max-w-full object-cover"
+                src={ThirdBlog}
+                alt=""
+              />
+              <div className="flex gap-2.5 py-2.5 text-[#9F9F9F] text-[14px] md:gap-5">
+                <div className="flex gap-1 md:gap-2.5">
+                  <img
+                    className="size-5 md:size-auto"
+                    src={ProfileBlog}
+                    alt=""
+                  />
                   <p>Admin</p>
                 </div>
-                <div className="flex gap-2.5">
-                  <img src={CalenderBlog} alt="" />
+                <div className="flex gap-1 md:gap-2.5 ">
+                  <img
+                    className="size-5 md:size-auto"
+                    src={CalenderBlog}
+                    alt=""
+                  />
                   <p>14 Oct 2022</p>
                 </div>
-                <div className="flex gap-2.5">
-                  <img src={DescriptionBlog} alt="" />
+                <div className="flex gap-1 md:gap-2.5 ">
+                  <img
+                    className="size-5 md:size-auto"
+                    src={DescriptionBlog}
+                    alt=""
+                  />
                   <p>Wood</p>
                 </div>
               </div>
-              <p className="font-medium text-3xl">
+              <p className="font-medium text-xl md:text-3xl">
                 Handmade pieces that took time to make
               </p>
-              <p className="font-normal text-[15px] text-[#9F9F9F] py-2.5">
+              <p className="font-normal text-xs md:text-[15px] text-[#9F9F9F] py-2.5 text-justify">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Mus
                 mauris vitae ultricies leo integer malesuada nunc. In nulla
@@ -139,12 +188,12 @@ const Blog = () => {
                 ornare aenean euismod elementum.
               </p>
               <p>
-                <span className=" font-normal text-[16px] border-b">
+                <span className="font-normal text-[14px] md:text-[16px] border-b">
                   Read More
                 </span>
               </p>
             </div>
-            <div className="flex justify-end gap-5 font-normal text[20px] pt-15">
+            <div className="flex justify-end gap-5 font-normal text-[14px] pt-10 pb-8 md:text-pxl md:pt-15 md:pb-0">
               <p className="py-2 px-4 bg-[#FBEBB5] rounded-lg">1</p>
               <p className="py-2 px-4 bg-[#FFF9E5] rounded-lg">2</p>
               <p className="py-2 px-4 bg-[#FFF9E5] rounded-lg">3</p>
@@ -154,7 +203,7 @@ const Blog = () => {
             </div>
           </div>
           {/* right */}
-          <div className="px-10">
+          <div className="md:px-10 ">
             <div className="flex border border-[#9F9F9F] rounded-[10px] px-2.5 items-center">
               <input
                 className="w-full py-3 text-[#9F9F9F] font-normal border-none outline-none"
@@ -163,7 +212,7 @@ const Blog = () => {
               />
               <img className="size-5" src={SearchIcon} />
             </div>
-            <div className="py-7 px-5">
+            <div className="py-7 md:px-5">
               <p className="font-medium text-2xl pb-2.5">Categories</p>
               <div className="flex justify-between py-2.5 text-[#9F9F9F]">
                 <p>Crafts</p>
@@ -187,7 +236,7 @@ const Blog = () => {
               </div>
             </div>
 
-            <div className="py-7 px-10">
+            <div className="pt-7 md:px-10">
               <p className="font-medium text-2xl pb-2.5">Recent Posts</p>
               <div className="flex gap-2.5 py-2.5 ">
                 <img className="size-auto" src={FirstRecentPost} alt="" />
@@ -242,23 +291,23 @@ const Blog = () => {
           </div>
         </div>
         {/* third */}
-        <div className="bg-[#FAF4F4] flex justify-between py-20 px-20">
+        <div className="bg-[#FAF4F4] justify-between gap-2.5 py-20 px-5 lg:px-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           <div>
-            <p className="font-medium text-3xl">Free Delivery</p>
-            <p className="font-normal text-[20px] text-[#9F9F9F]">
+            <p className="font-medium text-2xl md:text-3xl">Free Delivery</p>
+            <p className="font-normal text-[16px] text-[#9F9F9F] md:text-xl">
               For all oders over $50, consectetur <br /> adipim scing elit.
             </p>
           </div>
           <div>
-            <p className="font-medium text-3xl">90 Days Return</p>
-            <p className="font-normal text-[20px] text-[#9F9F9F]">
+            <p className="font-medium text-2xl md:text-3xl">90 Days Return</p>
+            <p className="font-normal text-[16px] text-[#9F9F9F] md:text-xl">
               If goods have problems, consectetur <br /> adipim scing elit.
             </p>
           </div>
           <div>
-            <p className="font-medium text-3xl">Secure Payment</p>
-            <p className="font-normal text-[20px] text-[#9F9F9F]">
-              100% secure payment, consectetur <br /> adipim scing elit.
+            <p className="font-medium text-2xl md:text-3xl">Secure Payment</p>
+            <p className="font-normal text-[16px] text-[#9F9F9F] md:text-xl">
+              100% secure payment, consectetur adipim scing elit.
             </p>
           </div>
         </div>

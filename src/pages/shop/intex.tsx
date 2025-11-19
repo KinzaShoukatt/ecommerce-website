@@ -126,13 +126,13 @@ const Shop = () => {
     <>
       <div className="popp box-border">
         <div
-          className="h-[50vh] flex flex-col justify-center text-center box-border"
+          className="h-[50vh] w-full object-cover flex flex-col justify-center text-center box-border"
           style={{ backgroundImage: `url(${BgImage})` }}
         >
           <div className="leading-none p-0 m-0">
             <img className="mx-auto" src={BgImageLogo} alt="" />
           </div>
-          <p className="font-medium text-5xl">Shop</p>
+          <p className="font-medium text-3xl md:text-5xl">Shop</p>
           <div className="flex gap-1 justify-center pt-2.5">
             <p className="font-medium text-[16px]">Home</p>
             <p className="font-medium">&gt;</p>
@@ -140,41 +140,45 @@ const Shop = () => {
           </div>
         </div>
         {/* second */}
-        <div className="bg-[#FAF4F4] flex justify-between mt-5 py-5 px-10 box-border">
+        <div className="bg-[#FAF4F4] flex flex-col justify-between mt-5 py-5 px-2.5 gap-5 box-border sm:flex-row lg:px-10">
           <div className="flex items-center ">
-            <div className="flex gap-3.5 border-r-2 px-5">
+            <div className="flex gap-2.5 pr-5 shrink-0">
               <img src={SecSecFirstLogo} alt="" />
-              <p className="font-normal text-[20px]">Filter</p>
+              <p className="font-normal text-[14px] lg:text-[20px]">Filter</p>
               <img src={SecSecSecLogo} alt="" />
               <img src={SecSecThirdLogo} alt="" />
             </div>
-            <div className="px-5">
-              <p className="font-normal text-[16px]">
+
+            <div className="pl-5 border-l-2">
+              <p className="font-normal text-[14px] lg:text-[16px]">
                 Showing 1–16 of 32 results
               </p>
             </div>
           </div>
           <div className="flex gap-5 box-border">
             <div className="flex gap-2.5 items-center box-border">
-              <p className="font-normal text-[20px]">Show</p>
-              <p className="bg-white py-2 px-3.5 text-[#9F9F9F] font-normal text-[20px]">
+              <p className="font-normal text-[14px] lg:text-[20px]">Show</p>
+              <p className="bg-white py-2 px-3.5 text-[#9F9F9F] font-normal text-[14px] lg:text-[20px]">
                 16
               </p>
             </div>
             <div className="flex gap-2.5 items-center box-border">
-              <p className="font-normal text-[20px]">Shot By</p>
-              <p className="bg-white py-2 pl-3.5 pr-10 text-[#9F9F9F] font-normal text-[20px]">
+              <p className="font-normal text-[14px] lg:text-[20px]">Shot By</p>
+              <p className="bg-white py-2 pl-3.5 pr-10 text-[#9F9F9F] font-normal text-[14px] lg:text-[20px]">
                 Default
               </p>
             </div>
           </div>
         </div>
         {/* third */}
-        <div className="popp px-20 pb-15">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 py-5">
+        <div className="popp pb-15 md:px-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 py-5 justify-items-center">
             {products.map((item) => (
-              <div key={item.id} className="cursor-pointer">
-                <div className="size-60">
+              <div
+                key={item.id}
+                className="cursor-pointer w-full flex flex-col items-center"
+              >
+                <div className="size-60 flex justify-center">
                   <img
                     onClick={() =>
                       navigate("/review", { state: { products: item } })
@@ -187,7 +191,9 @@ const Shop = () => {
 
                 <div>
                   <p className="font-normal text-[16px]">{item.name}</p>
-                  <p className="font-medium text-2xl">{item.price}</p>
+                  <p className="font-medium text-xl sm:text-2xl">
+                    {item.price}
+                  </p>
                 </div>
               </div>
             ))}
@@ -201,23 +207,23 @@ const Shop = () => {
           </div>
         </div>
         {/* fourth */}
-        <div className="bg-[#FAF4F4] flex justify-between py-20 px-20">
+        <div className="bg-[#FAF4F4] justify-between gap-2.5 py-20 px-5 lg:px-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           <div>
-            <p className="font-medium text-3xl">Free Delivery</p>
-            <p className="font-normal text-[20px] text-[#9F9F9F]">
+            <p className="font-medium text-2xl md:text-3xl">Free Delivery</p>
+            <p className="font-normal text-[16px] text-[#9F9F9F] md:text-xl">
               For all oders over $50, consectetur <br /> adipim scing elit.
             </p>
           </div>
           <div>
-            <p className="font-medium text-3xl">90 Days Return</p>
-            <p className="font-normal text-[20px] text-[#9F9F9F]">
+            <p className="font-medium text-2xl md:text-3xl">90 Days Return</p>
+            <p className="font-normal text-[16px] text-[#9F9F9F] md:text-xl">
               If goods have problems, consectetur <br /> adipim scing elit.
             </p>
           </div>
           <div>
-            <p className="font-medium text-3xl">Secure Payment</p>
-            <p className="font-normal text-[20px] text-[#9F9F9F]">
-              100% secure payment, consectetur <br /> adipim scing elit.
+            <p className="font-medium text-2xl md:text-3xl">Secure Payment</p>
+            <p className="font-normal text-[16px] text-[#9F9F9F] md:text-xl">
+              100% secure payment, consectetur adipim scing elit.
             </p>
           </div>
         </div>
