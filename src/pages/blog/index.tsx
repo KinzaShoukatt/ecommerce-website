@@ -19,7 +19,7 @@ const Blog = () => {
       <div className="popp box-border">
         {/* first */}
         <div
-          className="h-[50vh]  w-full object-cover flex flex-col justify-center text-center box-border"
+          className="h-[50vh] w-full object-cover flex flex-col justify-center text-center box-border"
           style={{ backgroundImage: `url(${BgImage})` }}
         >
           <div className="leading-none p-0 m-0">
