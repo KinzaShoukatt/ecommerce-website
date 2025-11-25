@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <>
       <div
-        className={`flex gap-2.5 box-border text-text py-4 items-center  ${
+        className={`flex gap-2.5 box-border text-text py-4 items-center sticky top-0 shadow-2xs z-10  ${
           isHome ? "bg-[#FBEBB5]" : "bg-white"
         }`}
       >

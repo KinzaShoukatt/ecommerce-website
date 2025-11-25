@@ -1,6 +1,9 @@
 // import React from 'react'
 
+import { useNavigate } from "react-router-dom";
+
 const Footer = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="popp py-5 box-border px-2.5 md:px-5 lg:px-20">
@@ -12,10 +15,21 @@ const Footer = () => {
           <div className="font-medium">
             <p className=" text-[#9F9F9F]">Links</p>
             <ul className="leading-10 pt-2.5">
-              <li>Home</li>
-              <li>Shop</li>
-              <li>About </li>
-              <li>Contact</li>
+              <li onClick={() => navigate("/")} className="cursor-pointer">
+                Home
+              </li>
+              <li onClick={() => navigate("shop")} className="cursor-pointer">
+                Shop
+              </li>
+              <li onClick={() => navigate("/blog")} className="cursor-pointer">
+                About{" "}
+              </li>
+              <li
+                onClick={() => navigate("/contact")}
+                className="cursor-pointer"
+              >
+                Contact
+              </li>
             </ul>
           </div>
           <div className="font-medium">
@@ -28,13 +42,15 @@ const Footer = () => {
           </div>
           <div className="font-medium">
             <p className=" text-[#9F9F9F]">Newsletter</p>
-            <div className="leading-10 pt-2.5 flex gap-2.5">
+            <div className="leading-10 pt-2.5 flex flex-col gap-2.5 sm:flex-row">
               <input
-                className="border-b text-[14px]"
+                className="border-b text-[14px] outline-none"
                 type="email"
                 placeholder="Enter Your Email Address "
               />
-              <button className="border-b text-[14px]">SUBSCRIBE</button>
+              <button className=" text-[14px] text-left cursor-pointer">
+                <span className="border-b pb-2.5">SUBSCRIBE</span>
+              </button>
             </div>
           </div>
         </div>

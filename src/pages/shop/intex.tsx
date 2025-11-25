@@ -27,97 +27,97 @@ const Shop = () => {
     {
       id: 1,
       name: "Trenton modular sofa_3",
-      price: "Rs. 25,000.00",
+      price: "Rs. 25,000",
       image: ThirdSecFirstImage,
     },
     {
       id: 2,
       name: "Granite dining table with dining chair 1",
-      price: "Rs. 25,000.00",
+      price: "Rs. 25,000",
       image: ThirdSecSecImage,
     },
     {
       id: 3,
       name: "Outdoor bar table and stool",
-      price: "Rs. 25,000.00",
+      price: "Rs. 25,000",
       image: ThirdSecThirdImage,
     },
     {
       id: 4,
       name: "Plain console with teak mirror",
-      price: "Rs. 25,000.00",
+      price: "Rs. 25,000",
       image: ThirdSecFourthImage,
     },
     {
       id: 5,
       name: "Grain coffee table",
-      price: "Rs. 15,000.00",
+      price: "Rs. 15,000",
       image: ThirdSecFiftImage,
     },
     {
       id: 6,
       name: "Kent coffee table",
-      price: "Rs. 225,000.00",
+      price: "Rs. 225,000",
       image: ThirdSecSixthImage,
     },
     {
       id: 7,
       name: "Round coffee table_color 2",
-      price: "Rs. 251,000.00",
+      price: "Rs. 251,000",
       image: ThirdSecSeventhImage,
     },
     {
       id: 8,
       name: "Reclaimed teak coffee table",
-      price: "Rs. 25,200.00",
+      price: "Rs. 25,200",
       image: ThirdSecEightImage,
     },
     {
       id: 9,
       name: "Plain console_",
-      price: "Rs. 258,200.00",
+      price: "Rs. 258,200",
       image: ThirdSecNinthImage,
     },
     {
       id: 10,
       name: "Reclaimed teak Sideboard",
-      price: "Rs. 200,000.00",
+      price: "Rs. 200,000",
       image: ThirdSecTenthImage,
     },
     {
       id: 11,
       name: "SJP_0825",
-      price: "Rs. 200,000.00",
+      price: "Rs. 200,000",
       image: ThirdSecEleventhImage,
     },
     {
       id: 12,
       name: "Bella chair and table",
-      price: "Rs. 100,000.00",
+      price: "Rs. 100,000",
       image: ThirdSecTwelevthImage,
     },
     {
       id: 13,
       name: "Granite square side table",
-      price: "Rs. 258,800.00",
+      price: "Rs. 258,800",
       image: ThirdSecThirteenImage,
     },
     {
       id: 14,
       name: "Asgaard sofa",
-      price: "Rs. 250,000.00",
+      price: "Rs. 250,000",
       image: ThirdSecFourteenImage,
     },
     {
       id: 15,
       name: "Maya sofa three seater",
-      price: "Rs. 115,000.00",
+      price: "Rs. 115,000",
       image: ThirdSecFifteenImage,
     },
     {
       id: 16,
       name: "Outdoor sofa set",
-      price: "Rs. 244,000.00",
+      price: "Rs. 244,000",
       image: ThirdSecSixteenImage,
     },
   ];
@@ -126,7 +126,7 @@ const Shop = () => {
     <>
       <div className="popp box-border">
         <div
-          className="h-[50vh] w-full object-cover flex flex-col justify-center text-center box-border"
+          className="py-14 w-full flex flex-col justify-center text-center box-border md:py-20"
           style={{ backgroundImage: `url(${BgImage})` }}
         >
           <div className="leading-none p-0 m-0">

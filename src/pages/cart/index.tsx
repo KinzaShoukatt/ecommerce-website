@@ -6,17 +6,38 @@ import DeleteIcon from "../../assets/icons/ant-design_delete-filled.svg";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
+type Product = {
+  id?: number;
+  name: string;
+  price: string | number;
+  image: string;
+  quantity?: number;
+  subtotal: number;
+};
+
 const Cart = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const myProduct = location?.state?.thisProduct;
-  const [cartItem, setCartItem] = useState(myProduct);
+  const myProduct = location?.state?.thisProduct || [];
+  const [cartItems, setCartItems] = useState<Product[]>(myProduct);
+
+  const removeItem = (id?: number) => {
+    if (!id) return;
+    const updatedCart = cartItems.filter((item) => item.id !== id);
+    setCartItems(updatedCart);
+  };
+
+  const subtotal = cartItems.reduce((total, item) => {
+    const price = Number(String(item.price).replace(/[^0-9]/g, ""));
+    return total + price * (item.quantity || 1);
+  }, 0);
+
   return (
     <>
       <div className="popp box-border overflow-x-hidden">
         {/* first */}
         <div
-          className="h-[50vh] w-full flex flex-col justify-center text-center box-border"
+          className="py-14 w-full flex flex-col justify-center text-center box-border md:py-20"
           style={{ backgroundImage: `url(${BgImage})` }}
         >
           <div className="leading-none p-0 m-0">
@@ -43,47 +64,48 @@ const Cart = () => {
                   <th className="w-[120px] py-3.5">Quantity</th>
                   <th className="w-[140px] py-3.5">Subtotal</th>
                   <th className="w-[60px] py-3.5"></th>
-                  {/* <th className="w-2/12 py-3.5"></th>
-                  <th className="min-w-[200px] py-3.5">Product</th>
-                  <th className="w-2/12 py-3.5">Price</th>
-                  <th className="w-2/12 py-3.5">Quantity</th>
-                  <th className="w-2/12 py-3.5">Subtotal</th>
-                  <th className="w-1/12 py-3.5"></th> */}
                 </tr>
               </thead>
               <tbody>
-                {cartItem ? (
-                  <tr>
-                    <td className="py-10">
-                      <img
-                        className="size-20 md:size-35"
-                        src={cartItem.image}
-                        alt=""
-                      />
-                    </td>
-                    <td className="font-normal text-[16px] text-[#9F9F9F] py-10">
-                      {cartItem.name}
-                    </td>
-                    <td className="font-normal text-[16px] text-[#9F9F9F] py-10">
-                      {cartItem.price}
-                    </td>
-                    <td className="py-10 ">
-                      <span className="border border-[#9F9F9F] py-1 px-2.5 rounded-[5px]">
-                        1
-                      </span>
-                    </td>
-                    <td className="font-normal text-[16px] py-10">
-                      {cartItem.price}
-                    </td>
-                    <td className="py-10">
-                      <img
-                        className="cursor-pointer"
-                        onClick={() => setCartItem(null)}
-                        src={DeleteIcon}
-                        alt=""
-                      />
-                    </td>
-                  </tr>
+                {cartItems.length > 0 ? (
+                  cartItems.map((item) => {
+                    const price = Number(
+                      String(item.price).replace(/[^0-9]/g, "")
+                    );
+                    return (
+                      <tr key={item.id}>
+                        <td className="py-5">
+                          <img
+                            className="size-20 md:size-35"
+                            src={item.image}
+                            alt=""
+                          />
+                        </td>
+                        <td className="font-normal text-[16px] text-[#9F9F9F] py-5">
+                          {item.name}
+                        </td>
+                        <td className="font-normal text-[16px] text-[#9F9F9F] py-5">
+                          {item.price}
+                        </td>
+                        <td className="py-5">
+                          <span className="border border-[#9F9F9F] py-1 px-2.5 rounded-[5px]">
+                            {item.quantity || 1}
+                          </span>
+                        </td>
+                        <td className="font-normal text-[16px] py-5">
+                          {price * (item.quantity || 1)}
+                        </td>
+                        <td className="py-5">
+                          <img
+                            className="cursor-pointer w-5"
+                            src={DeleteIcon}
+                            alt="delete"
+                            onClick={() => removeItem(item.id)}
+                          />
+                        </td>
+                      </tr>
+                    );
+                  })
                 ) : (
                   <tr>
                     <td className="py-10">
@@ -110,7 +132,7 @@ const Cart = () => {
                     <td className="py-10">
                       <img
                         className="cursor-pointer"
-                        onClick={() => setCartItem(null)}
+                        // onClick={() => setCartItems(false)}
                         src={DeleteIcon}
                         alt=""
                       />
@@ -121,27 +143,29 @@ const Cart = () => {
             </table>
           </div>
           {/* right */}
-          <div className="box-border bg-[#FFF9EF] px-5 py-3.5 w-full md:w-1/4 max-w-full">
+          <div className="box-border bg-[#FFF9EF] px-5 pt-3.5 pb-8 w-full max-h-fit rounded-[5px] md:w-1/4 max-w-full">
             <p className="font-semibold text-2xl pb-2.5 whitespace-nowrap md:w-3xl md:pb-5">
               Cart Totals
             </p>
             <div className="flex justify-between gap-1.5 py-1.5">
               <p className="font-medium text-[16px]">Subtotal</p>
               <p className="font-normal whitespace-nowrap">
-                {cartItem ? cartItem.price : "Rs. 250,000.00"}
+                Rs. {subtotal ? subtotal : "250,000.00"}
               </p>
             </div>
             <div className="flex justify-between gap-1.5 py-1.5 items-center">
               <p className="font-medium text-[16px]">Total</p>
               <p className="font-medium text-[20px] text-[#B88E2F] whitespace-nowrap">
-                {cartItem ? cartItem.price : " Rs. 250,000.00"}
+                Rs. {subtotal ? subtotal : "250,000.00"}
               </p>
             </div>
             <div className="pt-3  flex">
               <button
                 className="border font-normal text-[20px] rounded-[10px] py-1.5 px-7 mx-auto cursor-pointer whitespace-nowrap"
                 onClick={() =>
-                  navigate("/checkout", { state: { product: myProduct } })
+                  navigate("/checkout", {
+                    state: { thisProduct: myProduct, subtotal: subtotal },
+                  })
                 }
               >
                 Check Out
